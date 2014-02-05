@@ -5,6 +5,8 @@ from dateutil.relativedelta import relativedelta
 import os
 import requests
 import sys
+import logging
+logging.basicConfig()
 from thready import threaded
 
 # MTS notes
@@ -15,6 +17,7 @@ from thready import threaded
 
 BASE_URL = 'http://www.fms.treas.gov/mts/'
 SAVE_DIR = os.path.join('..', 'data', 'fixie')
+os.system('mkdir -pv ' + SAVE_DIR)
 
 ################################################################################
 def check_dates(start_date, end_date):
